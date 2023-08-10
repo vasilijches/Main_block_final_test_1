@@ -6,7 +6,7 @@
 
 
 
-void PrintArray(string[] array)
+void PrintArray(string[] array) //вывод массива в терминале
 {
     for (int i = 0; i < array.Length-1; i++)
     {
@@ -17,13 +17,19 @@ void PrintArray(string[] array)
 
 string[] ArrToArr3(string[] array1)
 {
-    int size1 = array1.Length;
+    int size1 = array1.Length; // длина исходного массива
 
-    int size2 = 0;
-    int firstIndex = 0;
+    int size2 = 0; // длина искомого массива, которая будет определяться далее
+    
+    // индексы первого и последнего элементов, соответствующих условию длина <= 3
+    int firstIndex = 0; 
     int lastIndex = 0;
-    bool countFlag = true;
+    
+    // флаг для одновременного поиска первого и последнего элементов
+    bool countFlag = true; 
 
+    // одновременный поиск в одном цикле количества элементов,
+    // индексов первого и последнего элементов, удовлетворяющих условию
     for (int i = 0; i < size1; i++)
     {
         if(array1[i].Length <= 3)
@@ -37,9 +43,10 @@ string[] ArrToArr3(string[] array1)
             size2++;
         }
     }
-
-    string[] array2 = new string[size2];
-    if(size2 > 0)
+    
+    string[] array2 = new string[size2]; // результирующий массив
+    
+    if(size2 > 0) // заполнение результирующего массива элементами
     {
         int m = 0;
         for (int j = firstIndex; j <= lastIndex; j++)
